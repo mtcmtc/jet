@@ -1,11 +1,17 @@
 {
-  "name": "jet",
-  "version": "2.0.0",
-  "description": "It's (j)ust (e)leventy and (t)ailwind … OK, and a few other things; it's still *really* small though.",
+  "name": "ly2021-her",
+  "version": "1.0.0",
+  "description": "Landing page for new uniforms",
   "scripts": {
+    "build:dev": "run-s clean css html",
+    "build": "cross-env NODE_ENV=production yarn build:dev",
     "clean": "rimraf public src/css/styles.css",
-    "dev": "npm run clean && postcss src/css/tailwind.css > src/css/styles.css && eleventy --serve",
-    "build": "npm run clean && NODE_ENV=production postcss src/css/tailwind.css > src/css/styles.css && eleventy"
+    "css": "postcss src/css/tailwind.css > src/css/styles.css",
+    "html": "eleventy",
+    "html:prod": "cross-env NODE_ENV=production eleventy",
+    "watch": "run-p watch:html watch:css",
+    "watch:html": "cross-env eleventy --serve --port 5000 --quiet",
+    "watch:css": "yarn css --watch"
   },
   "repository": {
     "type": "git",
@@ -26,8 +32,12 @@
   "homepage": "https://github.com/marcamos/jet#readme",
   "devDependencies": {
     "@11ty/eleventy": "^0.11.1",
+    "alpinejs": "^2.8.1",
     "autoprefixer": "^10.2.5",
+    "cross-env": "^7.0.3",
     "cssnano": "^4.1.10",
+    "html-minifier": "^4.0.0",
+    "npm-run-all": "^4.1.5",
     "postcss": "^8.2.8",
     "postcss-cli": "^8.3.1",
     "rimraf": "^3.0.2",
