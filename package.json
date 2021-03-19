@@ -1,7 +1,7 @@
 {
-  "name": "ly2021-her",
-  "version": "1.0.0",
-  "description": "Landing page for new uniforms",
+  "name": "jet",
+  "version": "2.0.0",
+  "description": "It's (j)ust (e)leventy and (t)ailwind … OK, and a few other things; it's still *really* small though.",
   "scripts": {
     "build:dev": "run-s clean css html",
     "build": "cross-env NODE_ENV=production yarn build:dev",
