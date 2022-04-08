@@ -32,7 +32,7 @@
   "homepage": "https://github.com/marcamos/jet#readme",
   "devDependencies": {
     "@11ty/eleventy": "^0.11.1",
-    "alpinejs": "^2.8.1",
+    "alpinejs": "^3.9.6",
     "autoprefixer": "^10.2.5",
     "cross-env": "^7.0.3",
     "cssnano": "^4.1.10",
